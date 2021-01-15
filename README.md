@@ -151,13 +151,10 @@ MacOS on Asus FX506L
  * seems ok, can be improved by
    [CPUFriendFriend](https://github.com/corpnewt/CPUFriendFriend)
 
-   Instructions on how to build a power mangaement profile for any other CPU types can be found here:
+   Instructions on how to build a power management profile for any other CPU types can be found here:
 
    https://github.com/PMheart/CPUFriend/blob/master/Instructions.md
  
- Intel Power Gadget
- :-------------------------:
- ![alt text](screenshots/IPG.png)
 
 ## Credits
 
