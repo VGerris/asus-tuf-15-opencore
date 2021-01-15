@@ -46,7 +46,7 @@ MacOS on Asus FX506L
  | Bluetooth | ✅ | Intel Bluetooth |
  | Ethernet | ✅ | Realtek 8111 Gigabit Ethernet |
  | Webcam | ✅ | Integrated 720P Webcam |
- | Audio | ✅ | Realtek HDA ALC255 |
+ | Audio | ✅ | Realtek HDA |
  | Microphone | ✅  | Integrated Microphone |
  | Internal Screen | ✅ | 15.6" 1920x1080 144Hz |
  | Trackpad | ✅/🚫 | I2C ELAN1201 |
