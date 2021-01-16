@@ -69,11 +69,7 @@ Added older WhateverGreen to fix backlight black for 3 minutes.
 - [x] Sleep & Wake
 
 - [x] ...
-
-> 1. The above functions are only tested and passed in AN715-51.
-> 1. Whether the native refresh rate adjustment is available depends on the model and production batch of the screen.
- 
- 
+  
  ## ## Issues & Solutions
  ### macOS
  * [Hackintool: The Swiss army knife of vanilla Hackintoshing.](https://github.com/headkaze/Hackintool)
@@ -85,10 +81,10 @@ Added older WhateverGreen to fix backlight black for 3 minutes.
 
    For setting up the SMBIOS info, we'll use CorpNewt's GenSMBIOS and ProperTree application. https://github.com/corpnewt/GenSMBIOS https://github.com/corpnewt/ProperTree
 
-   Because of the Coffee Lake Plus(9th Gen), we'll choose the MacBookPro16,1 SMBIOS:
+   Because of the Comet Lake (10th Gen), we'll choose the MacBookPro16,4 SMBIOS:
 
    Run GenSMBIOS, pick option 1 for downloading MacSerial and Option 3 for selecting out SMBIOS. This will give us an output similar to the following:
-
+   (do not use these values, they are unvalid - use your own so you will have unique values)
    Type: MacBookPro16,4
 
    Serial: C02WXAY2HV2B
@@ -124,16 +120,15 @@ Added older WhateverGreen to fix backlight black for 3 minutes.
  
  ### Audio
  * KEXT required to enable Audio support : `AppleALC.kext`
- * Make sure you inject audio `layout-id = 11` in OpenCore 
+ * Make sure you inject audio `layout-id = 17` in OpenCore - this is in the current config.plist
  
  ### ELAN Trackpad (TPAD)
  * Using the latest VoodooI2C as of now 2.6.3 with VoodooI2CHID
- * The touchpad works mostly fine, but the left button mostly works for dragging, sometimes for clicking
- * right button is not working
- * occassionally there is some delay/tear 
+ * The touchpad works mostly fine, but the buttons only work when the tochpad is touched. both buttons work as left button, so can be used for drag and drop.
+ * occassionally there is some delay/tear, right click works by enabling double finger click 
  
  ### Wifi & Bluetooth
- * In order to get Bluetooth and Wifi working, you can use the drivers from https://github.com/OpenIntelWireless/itlwm 
+ * In order to get Bluetooth and Wifi working, you can use the drivers from https://github.com/OpenIntelWireless/itlwm for wifi
  * For bluetooth https://github.com/OpenIntelWireless/IntelBluetoothFirmware
  * For the UI, there is HeliPort: https://github.com/OpenIntelWireless/HeliPort
  * I like to hide the wireless icon for the builtin card, dozer is a great tool for that: https://github.com/Mortennn/Dozer
@@ -143,7 +138,7 @@ Added older WhateverGreen to fix backlight black for 3 minutes.
  ##### iGPU
 
  * HDMI Port :
-    * Long story short, it won't work. Why? Because all display output is hard wired to the NVIDIA GPU. You can confirm this by going into NVIDIA controler panel in Windows and see PhysX, and you can see all display output is wired to the NVIDIA card, while the eDP in screen display is wired to the iGPU. Therefore, since NVIDIA card won't work, also Optimus won't work, the HDMI port or USB-C display output just won't work because the display output is not wired to the iGPU. Not to mention you disabled dGPU in `config.plist/-wegnoegpu`or custom `SSDT-DDGPU`.
+    * Long story short, it won't work. Why? Because all display output is hard wired to the NVIDIA GPU. You can confirm this by going into NVIDIA controler panel in Windows and see PhysX, and you can see all display output is wired to the NVIDIA card, while the eDP in screen display is wired to the iGPU. Therefore, since NVIDIA card won't work, also Optimus won't work, the HDMI port or USB-C display output just won't work because the display output is not wired to the iGPU ( and dGPU is disabled)
     
  ##### dGPU
  * NVIDIA GTX1650 is not supported (for now only in High Sierra it seems) and is disabled 
