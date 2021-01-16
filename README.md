@@ -21,6 +21,8 @@ MacOS on Asus FX506L
 
  
  ## Updates
+- 2021-01-16
+Change layout id to 17 - headphones + headphones mic now work
 
 - 2021-01-15 (later :) )
 Added older WhateverGreen to fix backlight black for 3 minutes.
