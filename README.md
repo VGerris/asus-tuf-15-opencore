@@ -152,6 +152,11 @@ Added older WhateverGreen to fix backlight black for 3 minutes.
    Instructions on how to build a power management profile for any other CPU types can be found here:
 
    https://github.com/PMheart/CPUFriend/blob/master/Instructions.md
+   
+ ### Sleep script
+ To have the laptop go to sleep when the battery is low, try:
+ https://www.tonymacx86.com/threads/release-sleeponlowbattery-solb.264785/
+ 
  
 
 ## Credits
