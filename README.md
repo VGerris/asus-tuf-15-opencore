@@ -12,15 +12,19 @@ All credits for the DSDT file go to him.
 
 **macOS Version: 11.1 Big Sur **
 
-**OpenCore Version: [0.6.4 Offical](https://github.com/acidanthera/OpenCorePkg/releases/tag/0.6.4)**
+**OpenCore Version: [0.6.9 Offical](https://github.com/acidanthera/OpenCorePkg/releases/tag/0.6.9)**
 
 MacOS on Asus FX506L
 
- MacOS Big Sur 11.1
+ MacOS Big Sur 11.1-11.4 tested
  :-------------------------:
 
  
  ## Updates
+- 2021-06-03
+Upgraded to MacOS 11.4 - USBports kext added - needed to make USB work
+Updated OpenCore to 0.6.9 , Lilu 1.5.3 and WhateverGreen - modified config.plist for black screen delay
+ 
 - 2021-01-16
 Change layout id to 17 - headphones + headphones mic now work
 
@@ -87,9 +91,9 @@ Added older WhateverGreen to fix backlight black for 3 minutes.
    (do not use these values, they are unvalid - use your own so you will have unique values)
    Type: MacBookPro16,4
 
-   Serial: C02WXAY2HV2B
+   Serial: C02WXXX2HV2B
 
-   Board Serial: C02826303CDHRPC8B
+   Board Serial: C02826303CDHXXC8B
 
    SmUUID: 88AA1336-8DF9-477A-A39F-03D016ED0807
 
@@ -138,7 +142,7 @@ Added older WhateverGreen to fix backlight black for 3 minutes.
  ##### iGPU
 
  * HDMI Port :
-    * Long story short, it won't work. Why? Because all display output is hard wired to the NVIDIA GPU. You can confirm this by going into NVIDIA controler panel in Windows and see PhysX, and you can see all display output is wired to the NVIDIA card, while the eDP in screen display is wired to the iGPU. Therefore, since NVIDIA card won't work, also Optimus won't work, the HDMI port or USB-C display output just won't work because the display output is not wired to the iGPU ( and dGPU is disabled)
+    * Long story short, it won't work. Why? Because all display output is hard wired to the NVIDIA GPU. You can confirm this by going into NVIDIA controler panel in Windows and see PhysX, and you can see all display output is wired to the NVIDIA card, while the eDP in screen display is wired to the iGPU. Therefore, since NVIDIA card won't work, also Optimus won't work, the HDMI port or USB-C display output just won't work because the display output is not wired to the iGPU ( and dGPU is disabled) - note this works fine with a USB-c dock that has HDMI/display port on board
     
  ##### dGPU
  * NVIDIA GTX1650 is not supported (for now only in High Sierra it seems) and is disabled 
@@ -156,7 +160,6 @@ Added older WhateverGreen to fix backlight black for 3 minutes.
  ### Sleep script
  To have the laptop go to sleep when the battery is low, try:
  https://www.tonymacx86.com/threads/release-sleeponlowbattery-solb.264785/
- 
  
 
 ## Credits
